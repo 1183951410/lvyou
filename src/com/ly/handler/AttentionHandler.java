@@ -37,27 +37,27 @@ public class AttentionHandler extends DefaultHandler {
 		// TODO Auto-generated method stub
 		if (localName.equals("aid")) {
 			loginfo[0] = val;
-			//System.out.println("aid: " + loginfo[0]);
+			//Log.d("ly", "aid: " + loginfo[0]);
 
 		}
 		if (localName.equals("hid")) {
 			loginfo[1] = val;
-			//System.out.println("hid: " + loginfo[1]);
+			//Log.d("ly", "hid: " + loginfo[1]);
 
 		}
 
 		if (localName.equals("hname")) {
 			loginfo[2] = val;
-			//System.out.println("hname: " + loginfo[2]);
+			//Log.d("ly", "hname: " + loginfo[2]);
 		}
 		if (localName.equals("oid")) {
 			loginfo[3] = val;
-			//System.out.println("oid: " + loginfo[3]);
+			//Log.d("ly", "oid: " + loginfo[3]);
 
 		}
 		if (localName.equals("oname")) {
 			loginfo[4] = val;
-			//System.out.println("oname: " + loginfo[4]);
+			//Log.d("ly", "oname: " + loginfo[4]);
 		}
 		if (localName.equals("error")) {
 			this.error = val;

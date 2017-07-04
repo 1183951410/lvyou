@@ -36,7 +36,7 @@ public ArrayList<String[]> rmsg(InputStream in){
 //			else
 //			{
 //			list=flh.getList();	
-//			//System.out.println(list.size()+":friends");
+//			//Log.d("ly", list.size()+":friends");
 //			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

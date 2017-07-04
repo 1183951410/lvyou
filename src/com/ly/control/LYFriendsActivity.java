@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
@@ -62,7 +63,7 @@ public class LYFriendsActivity extends Activity {
 		t2.start();
 		Thread t3= new Thread(r1);
 		t3.start();
-		//System.out.println(id);
+		//Log.d("ly", id);
 	   elvExpandableListView = (ExpandableListView) findViewById(R.id.list);
 		// 创建一级条目
 		groups = new ArrayList<Map<String, String>>();
@@ -325,7 +326,7 @@ Runnable r3 = new Runnable() {
 					 child2.add(childdata);
 					 }
 				 for(int i=0;i<child2.size();i++){
-						//System.out.println( "===="+child2.get(i).get("child"));
+						//Log.d("ly",  "===="+child2.get(i).get("child"));
 					 }
 					
 					 childs.add(child2);
@@ -334,7 +335,7 @@ Runnable r3 = new Runnable() {
 			
 			
 			
-			// System.out.println(list.size()+":handler...");
+			// Log.d("ly", list.size()+":handler...");
 		  };
 		 
 	  };
@@ -361,12 +362,12 @@ Runnable r3 = new Runnable() {
 					sb.append(id);
 					sb.append("</uid>");
 					sb.append("</user>");
-					 System.out.println("-------------1");
+					 Log.d("ly", "-------------1");
 					byte userXML[] = sb.toString().getBytes();
 					out.write(userXML);
 					if(htc.getResponseCode()==HttpURLConnection.HTTP_OK)
 					{
-						System.out.println("-------------2");
+						Log.d("ly", "-------------2");
 						InputStream in =htc.getInputStream();
 						AttentionBean atb= new AttentionBean();
 						
@@ -388,7 +389,7 @@ Runnable r3 = new Runnable() {
 		Handler  haa=new  Handler()
 		  {
 			  public void handleMessage(android.os.Message msg) {
-				  System.out.println("-------------3");
+				  Log.d("ly", "-------------3");
 				 lista =(ArrayList<String[]>) msg.obj;
 				 Map<String, String> childdata =null;
 				 if(lista.size()==0){
@@ -400,10 +401,10 @@ Runnable r3 = new Runnable() {
 				 child3.add(childdata);
 				 }
 				/* for(int i=0;i<child3.size();i++){
-					System.out.println( "===="+child3.get(i).get("child"));
+					Log.d("ly",  "===="+child3.get(i).get("child"));
 				 }*/
 				 childs.add(child3);
-				// System.out.println(lista.size()+":ahandler...");
+				// Log.d("ly", lista.size()+":ahandler...");
 				 }
 				 
 			  };
@@ -468,10 +469,10 @@ Runnable r3 = new Runnable() {
 						 child1.add(childdata);
 						 }
 						/* for(int i=0;i<child3.size();i++){
-							System.out.println( "===="+child3.get(i).get("child"));
+							Log.d("ly",  "===="+child3.get(i).get("child"));
 						 }*/
 						 childs.add(child1);
-						// System.out.println(lista.size()+":ahandler...");
+						// Log.d("ly", lista.size()+":ahandler...");
 						 }
 						 
 					  };

@@ -71,7 +71,7 @@ public class LogoView extends View {
 	 * */
 	public void repaint(int alpha) {
 		this.alpha = alpha;
-		//System.out.println("111111111111");
+		//Log.d("ly", "111111111111");
 		// 抛出重绘事件
 		invalidate();
 		
@@ -91,7 +91,7 @@ public class LogoView extends View {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		// TODO Auto-generated method stub
-        //System.out.println("22222222");
+        //Log.d("ly", "22222222");
 		// 清屏
 		canvas.drawColor(Color.WHITE);
 		// 创建画笔对象

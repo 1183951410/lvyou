@@ -10,10 +10,8 @@ import org.xml.sax.XMLReader;
 
 import com.ly.handler.ShowMemoryHandler;
 
-
-
 public class ShowMemoryBean {
-	public ArrayList<String[]> gettogether(InputStream in){
+	public ArrayList<String[]> gettogether(InputStream in) {
 		SAXParserFactory sf = SAXParserFactory.newInstance();
 		ArrayList<String[]> list = null;
 		try {
@@ -21,19 +19,19 @@ public class ShowMemoryBean {
 			ShowMemoryHandler smh = new ShowMemoryHandler();
 			xr.setContentHandler(smh);
 			xr.parse(new InputSource(in));
-			if(smh.getError()!=null){
-				list=null;
-			
-			}else{
+			if (smh.getError() != null) {
+				list = null;
+
+			} else {
 				list = smh.getList();
-				
-			}					
-		
-		}  catch (Exception e) {
+
+			}
+
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}										
-		return list;	
-		
+		}
+		return list;
+
 	}
 }

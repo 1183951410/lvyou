@@ -333,7 +333,7 @@ public class LYAddMemoryActivity extends Activity {
 //					Message msg = new Message();
 //					msg.obj=result;
 //					h.sendMessage(msg);
-//					System.out.println(result+":uupptt");
+//					Log.d("ly", result+":uupptt");
 					
 				}
 

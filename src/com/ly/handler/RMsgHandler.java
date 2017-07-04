@@ -43,41 +43,41 @@ public class RMsgHandler extends DefaultHandler {
 		if(localName.equals("fid"))
 		{
 			loginfo[0]=val;
-			//System.out.println("fid: "+loginfo[0]);
+			//Log.d("ly", "fid: "+loginfo[0]);
 			
 		}
 		if(localName.equals("uid"))
 		{
 			loginfo[1]=val;
-			//System.out.println("uid: "+loginfo[1]);
+			//Log.d("ly", "uid: "+loginfo[1]);
 			
 		}
 
 		if(localName.equals("uname"))
 		{
 			loginfo[2]=val;
-			//System.out.println("name: "+loginfo[2]);
+			//Log.d("ly", "name: "+loginfo[2]);
 		}
 		if(localName.equals("ueid"))
 		{
 			loginfo[3]=val;
-			//System.out.println("ueid: "+loginfo[3]);
+			//Log.d("ly", "ueid: "+loginfo[3]);
 			
 		}
 		if(localName.equals("fname"))
 		{
 			loginfo[4]=val;
-			//System.out.println("fame: "+loginfo[4]);
+			//Log.d("ly", "fame: "+loginfo[4]);
 		}
 		if(localName.equals("time"))
 		{
 			loginfo[5]=val;
-			//System.out.println("fame: "+loginfo[4]);
+			//Log.d("ly", "fame: "+loginfo[4]);
 		}
 		if(localName.equals("content"))
 		{
 			loginfo[6]=val;
-			//System.out.println("fame: "+loginfo[4]);
+			//Log.d("ly", "fame: "+loginfo[4]);
 		}
 		if(localName.equals("error")){
 			this.error=val;

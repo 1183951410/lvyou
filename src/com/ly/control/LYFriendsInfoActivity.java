@@ -11,6 +11,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +31,7 @@ protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.friendinfo);
 	id=getIntent().getStringExtra("uid");
-	System.out.println("FXFriendsInfoActivity:"+id);
+	Log.d("ly", "FXFriendsInfoActivity:"+id);
 	iv02=(ImageView) findViewById(R.id.ImageView02);
 	tv03=(TextView) findViewById(R.id.TextView03);
 	tv05=(TextView) findViewById(R.id.TextView05);

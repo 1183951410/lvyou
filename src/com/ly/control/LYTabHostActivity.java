@@ -181,7 +181,7 @@ public class LYTabHostActivity extends TabActivity {
 			
 			
 			
-			// System.out.println(list.size()+":handler...");
+			// Log.d("ly", list.size()+":handler...");
 		  };
 		 
 	  };

@@ -14,6 +14,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -114,25 +115,25 @@ public class LYLoginActivity extends Activity {
 				htc.setDoOutput(true);
 				OutputStream out = htc.getOutputStream();
 				StringBuilder sb = new StringBuilder();
-				// sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+//				sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 				sb.append("<user>");
 				sb.append("<name>");
-				sb.append(et.getText() + "");
+				sb.append(et.getText().toString());
 				sb.append("</name>");
 				sb.append("<pswd>");
-				sb.append(et2.getText() + "");
+				sb.append(et2.getText().toString());
 				sb.append("</pswd>");
 				sb.append("<flag>");
 				sb.append(count);
 				sb.append("</flag>");
 				sb.append("</user>");
-				System.out.println("++++++++++++:" + htc.getResponseCode()
-						+ "url:" + url.getPath() + "ip:" + url.getHost());
+				
 				byte userXml[] = sb.toString().getBytes();
-				System.out.println("userXml" + Arrays.toString(userXml));
-				// out.write(userXml);
+				Log.d("ly", "userXml" + Arrays.toString(userXml));
+				Log.d("ly", "userXml string" + (sb.toString()));
+				out.write(userXml);
 				if (htc.getResponseCode() == HttpURLConnection.HTTP_OK) {
-					System.out.println("++++++++++++login:1");
+					Log.d("ly", "++++++++++++login:1");
 					InputStream in = htc.getInputStream();
 					LoginBean xp = new LoginBean();
 					String result = xp.password(in);
@@ -151,7 +152,7 @@ public class LYLoginActivity extends Activity {
 	private String result;
 	Handler h = new Handler() {
 		public void handleMessage(Message msg) {
-			System.out.println("++++++++++++login:2");
+			Log.d("ly", "++++++++++++login:2");
 			String re = msg.obj + "";
 			if (re.equals("error")) {
 				Toast.makeText(LYLoginActivity.this, "登录失败,请检查用户名密码是否正确",

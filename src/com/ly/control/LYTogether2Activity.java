@@ -126,7 +126,7 @@ Runnable r = new Runnable() {
 //					InputStream in = hpc.getInputStream();
 					/*emotionBean eb = new emotionBean();
 					ArrayList<String[]> list = eb.parse2(in);
-				System.out.println(list.size()+":thead............");
+				Log.d("ly", list.size()+":thead............");
 				    Message msg = new Message();
 				    msg.obj = list;
 	                h.sendMessage(msg);*/

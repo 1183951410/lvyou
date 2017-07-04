@@ -42,7 +42,7 @@ public class LYWelcomeActivity extends Activity {
 	 * */
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		//System.out.println("Logo onCreate");
+		//Log.d("ly", "Logo onCreate");
 		super.onCreate(savedInstanceState);
 
 		// 实例化自定义视图
@@ -67,14 +67,14 @@ public class LYWelcomeActivity extends Activity {
 		protected void onPreExecute() {
 			// TODO Auto-generated method stub
 			super.onPreExecute();
-			//System.out.println("a"+System.currentTimeMillis());
+			//Log.d("ly", "a"+System.currentTimeMillis());
 		}
 		/**
 		 * 异步任务执行成功后，自动跳转至应用程序主界面
 		 * */
 		@Override
 		protected void onPostExecute(String result) {
-			 //System.out.println("d"+System.currentTimeMillis());
+			 //Log.d("ly", "d"+System.currentTimeMillis());
 			// TODO Auto-generated method stub
 			Intent intent=new Intent(LYWelcomeActivity .this, LYTabHostActivity.class);
 			startActivity(intent);
@@ -84,7 +84,7 @@ public class LYWelcomeActivity extends Activity {
 		 * */
 		@Override
 		protected void onProgressUpdate(Integer... values) {
-			 //System.out.println("c"+System.currentTimeMillis());
+			 //Log.d("ly", "c"+System.currentTimeMillis());
 			// TODO Auto-generated method stub
 			int temp = values[0].intValue();
 			lv.repaint(temp);
@@ -96,7 +96,7 @@ public class LYWelcomeActivity extends Activity {
 		@Override
 		protected String doInBackground(Object... arg0) {
 			// TODO Auto-generated method stub
-          // System.out.println("b"+System.currentTimeMillis());
+          // Log.d("ly", "b"+System.currentTimeMillis());
 			while (alpha < 255) {
 
 				try {

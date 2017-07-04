@@ -29,12 +29,12 @@ public ArrayList<String[]> attention(InputStream in){
 //			if(atb.getError()!=null)
 //			{
 //				lista=null;
-//				//System.out.println("error:((()))");
+//				//Log.d("ly", "error:((()))");
 //			}
 //			else
 //			{
 //			lista=atb.getList();	
-//			//System.out.println(lista.size()+":attentions");
+//			//Log.d("ly", lista.size()+":attentions");
 //			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
