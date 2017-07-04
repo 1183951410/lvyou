@@ -88,7 +88,7 @@ Handler  h=new  Handler()
 	  public void handleMessage(android.os.Message msg) {
 		   result= (String) msg.obj;
 		 if(result.equals("error")){
-			 Toast.makeText(LYFriendsInfoActivity.this, "Ò³Ãæ´íÎó", Toast.LENGTH_LONG).show();
+			 Toast.makeText(LYFriendsInfoActivity.this, "é¡µé¢é”™è¯¯", Toast.LENGTH_LONG).show();
 		 }else{
 			String [] re = result.split(",");
 			tv03.setText(re[1]);

@@ -42,8 +42,8 @@ public class StoreMemoryActivity extends Activity implements OnClickListener{
      private ArrayList<String> list = new ArrayList<String>();
     
      ArrayList<Map<String, Object>> attentionList;
-     int VIEW_COUNT =5; //ÓÃÓÚÏÔÊ¾Ã¿ÁĞ15¸öItemÏî¡£
-     int index = 0;//ÓÃÓÚÏÔÊ¾Ò³ºÅµÄË÷Òı
+     int VIEW_COUNT =5; //ç”¨äºæ˜¾ç¤ºæ¯åˆ—15ä¸ªItemé¡¹ã€‚
+     int index = 0;//ç”¨äºæ˜¾ç¤ºé¡µå·çš„ç´¢å¼•
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -108,21 +108,21 @@ public class StoreMemoryActivity extends Activity implements OnClickListener{
 		}
 	};
 	 private void checkButton() { 
-		  //Ë÷ÒıÖµĞ¡ÓÚµÈÓÚ0£¬±íÊ¾²»ÄÜÏòÇ°·­Ò³ÁË£¬ÒÑ¾­µ½ÁËµÚÒ»Ò³ÁË¡£
-		  //½«ÏòÇ°·­Ò³µÄ°´Å¥ÉèÎª²»¿ÉÓÃ¡£
+		  //ç´¢å¼•å€¼å°äºç­‰äº0ï¼Œè¡¨ç¤ºä¸èƒ½å‘å‰ç¿»é¡µäº†ï¼Œå·²ç»åˆ°äº†ç¬¬ä¸€é¡µäº†ã€‚
+		  //å°†å‘å‰ç¿»é¡µçš„æŒ‰é’®è®¾ä¸ºä¸å¯ç”¨ã€‚
 		  if(index <=0){
 		    btnleft.setEnabled(false);
 		    btnright.setEnabled(true);
 		  }
-		   /**ÖµµÄ³¤¶È¼õÈ¥Ç°¼¸Ò³µÄ³¤¶È£¬Ê£ÏÂµÄ¾ÍÊÇÕâÒ»Ò³µÄ³¤¶È£¬
-		    * Èç¹ûÕâÒ»Ò³µÄ³¤¶È±ÈView_CountĞ¡£¬
-		    * ±íÊ¾ÕâÊÇ×îºóµÄÒ»Ò³ÁË£¬ºóÃæÔÚÃ»ÓĞÁË¡£*/
-		   //½«Ïòºó·­Ò³µÄ°´Å¥ÉèÎª²»¿ÉÓÃ¡£
+		   /**å€¼çš„é•¿åº¦å‡å»å‰å‡ é¡µçš„é•¿åº¦ï¼Œå‰©ä¸‹çš„å°±æ˜¯è¿™ä¸€é¡µçš„é•¿åº¦ï¼Œ
+		    * å¦‚æœè¿™ä¸€é¡µçš„é•¿åº¦æ¯”View_Countå°ï¼Œ
+		    * è¡¨ç¤ºè¿™æ˜¯æœ€åçš„ä¸€é¡µäº†ï¼Œåé¢åœ¨æ²¡æœ‰äº†ã€‚*/
+		   //å°†å‘åç¿»é¡µçš„æŒ‰é’®è®¾ä¸ºä¸å¯ç”¨ã€‚
 		  else if(attentionList.size() - index*VIEW_COUNT <= VIEW_COUNT){
 		     btnright.setEnabled(false);
 		     btnleft.setEnabled(true);
 		  }
-		  //·ñÔò½«2¸ö°´Å¥¶¼ÉèÎª¿ÉÓÃµÄ¡£
+		  //å¦åˆ™å°†2ä¸ªæŒ‰é’®éƒ½è®¾ä¸ºå¯ç”¨çš„ã€‚
 		   else {
 		    btnleft.setEnabled(true);
 		    btnright.setEnabled(true);
@@ -141,15 +141,15 @@ public class StoreMemoryActivity extends Activity implements OnClickListener{
 		 }
 	private void rightView() { 
 		   index++;
-		  //Ë¢ĞÂListViewÀïÃæµÄÊıÖµ¡£
+		  //åˆ·æ–°ListViewé‡Œé¢çš„æ•°å€¼ã€‚
 		   ma.notifyDataSetChanged();
 		    checkButton();
 		 }
 	 private void leftView() { 
 		  index--;
-		  //Ë¢ĞÂListViewÀïÃæµÄÊıÖµ¡£
+		  //åˆ·æ–°ListViewé‡Œé¢çš„æ•°å€¼ã€‚
 		  ma.notifyDataSetChanged();
-		  //¼ì²éButtonÊÇ·ñ¿ÉÓÃ¡£
+		  //æ£€æŸ¥Buttonæ˜¯å¦å¯ç”¨ã€‚
 		  checkButton();
 		 }
 	 public class MoreAdapter extends BaseAdapter {
@@ -167,16 +167,16 @@ public class StoreMemoryActivity extends Activity implements OnClickListener{
 		   context = listIndexPage;
 		   this.attentionList = attentionList;
 		  }
-		   //ÉèÖÃÃ¿Ò»Ò³µÄ³¤¶È£¬Ä¬ÈÏµÄÊÇView_CountµÄÖµ¡£
+		   //è®¾ç½®æ¯ä¸€é¡µçš„é•¿åº¦ï¼Œé»˜è®¤çš„æ˜¯View_Countçš„å€¼ã€‚
 		  public int getCount() { 
 		   
-		   //ori±íÊ¾µ½Ä¿Ç°ÎªÖ¹µÄÇ°¼¸Ò³µÄ×Ü¹²µÄ¸öÊı¡£
+		   //oriè¡¨ç¤ºåˆ°ç›®å‰ä¸ºæ­¢çš„å‰å‡ é¡µçš„æ€»å…±çš„ä¸ªæ•°ã€‚
 		   int ori = VIEW_COUNT * index;
-		   //ÖµµÄ×Ü¸öÊı-Ç°¼¸Ò³µÄ¸öÊı¾ÍÊÇÕâÒ»Ò³ÒªÏÔÊ¾µÄ¸öÊı£¬Èç¹û±ÈÄ¬ÈÏµÄÖµĞ¡£¬ËµÃ÷ÕâÊÇ×îºóÒ»Ò³£¬Ö»ĞèÏÔÊ¾ÕâÃ´¶à¾Í¿ÉÒÔÁË
+		   //å€¼çš„æ€»ä¸ªæ•°-å‰å‡ é¡µçš„ä¸ªæ•°å°±æ˜¯è¿™ä¸€é¡µè¦æ˜¾ç¤ºçš„ä¸ªæ•°ï¼Œå¦‚æœæ¯”é»˜è®¤çš„å€¼å°ï¼Œè¯´æ˜è¿™æ˜¯æœ€åä¸€é¡µï¼Œåªéœ€æ˜¾ç¤ºè¿™ä¹ˆå¤šå°±å¯ä»¥äº†
 		   if(attentionList.size()- ori < VIEW_COUNT ){
 		    return attentionList.size() - ori;
 		   }
-		   //Èç¹û±ÈÄ¬ÈÏµÄÖµ»¹Òª´ó£¬ËµÃ÷Ò»Ò³ÏÔÊ¾²»Íê£¬»¹ÒªÓÃ»»Ò»Ò³ÏÔÊ¾£¬ÕâÒ»Ò³ÓÃÄ¬ÈÏµÄÖµÏÔÊ¾Âú¾Í¿ÉÒÔÁË¡£
+		   //å¦‚æœæ¯”é»˜è®¤çš„å€¼è¿˜è¦å¤§ï¼Œè¯´æ˜ä¸€é¡µæ˜¾ç¤ºä¸å®Œï¼Œè¿˜è¦ç”¨æ¢ä¸€é¡µæ˜¾ç¤ºï¼Œè¿™ä¸€é¡µç”¨é»˜è®¤çš„å€¼æ˜¾ç¤ºæ»¡å°±å¯ä»¥äº†ã€‚
 		    else {
 		     return VIEW_COUNT;
 		    }
@@ -194,11 +194,11 @@ public class StoreMemoryActivity extends Activity implements OnClickListener{
 			// TODO Auto-generated method stub
 			 ViewHolder holder;
 			   if(convertView == null){
-			    /**Ê¹ÓÃnewlistview.xmlÎªÃ¿Ò»¸öitemµÄLayoutÈ¡µÃId*/
+			    /**ä½¿ç”¨newlistview.xmlä¸ºæ¯ä¸€ä¸ªitemçš„Layoutå–å¾—Id*/
 			    LayoutInflater mInflater = LayoutInflater.from(context);
 			    convertView = mInflater.inflate(R.layout.moreattentionlistview, null);
 			    holder = new ViewHolder();
-			    /**ÊµÀı»¯¾ßÌåµÄ¿Ø¼ş*/
+			    /**å®ä¾‹åŒ–å…·ä½“çš„æ§ä»¶*/
 			    holder.attentinImag = (ImageView) convertView.findViewById(R.id.moreAttentionImage);
 			    holder.attentionPerson = (TextView) convertView.findViewById(R.id.moreAttentionPerson);
 			    holder.tx = (TextView) convertView.findViewById(R.id.TextView01);

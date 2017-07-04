@@ -80,9 +80,9 @@ public class PhotoActivity extends Activity {
 					String videoPath = cursor.getString(cursor
 							.getColumnIndex("_data"));
 					videoView.setVideoURI(Uri.parse(videoPath));
-					// ÉèÖÃÊÓÆµ¿ØÖÆÆ÷
+					// è®¾ç½®è§†é¢‘æ§åˆ¶å™¨
 					videoView.setMediaController(new MediaController(this));
-					// ¿ªÊ¼²¥·ÅÊÓÆµ
+					// å¼€å§‹æ’­æ”¾è§†é¢‘
 					videoView.start();
 
 				}
@@ -167,10 +167,10 @@ public class PhotoActivity extends Activity {
 				}
 				reset();
 				
-				/*//***Í¼Æ¬Ğ´ÈëÄÚ´æ¿¨
+				/*//***å›¾ç‰‡å†™å…¥å†…å­˜å¡
 				FileOutputStream b = null;
 				File file = new File("/sdcard/myImage/");
-				file.mkdirs();// ´´½¨ÎÄ¼ş¼Ğ
+				file.mkdirs();// åˆ›å»ºæ–‡ä»¶å¤¹
 				String fileName = "/sdcard/myImage/1.jpg";
 				try {
 					b = new FileOutputStream(fileName);
@@ -178,7 +178,7 @@ public class PhotoActivity extends Activity {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				bit.compress(Bitmap.CompressFormat.JPEG, 100, b);// °ÑÊı¾İĞ´ÈëÎÄ¼ş
+				bit.compress(Bitmap.CompressFormat.JPEG, 100, b);// æŠŠæ•°æ®å†™å…¥æ–‡ä»¶
 				//****
 	*/			
 			}

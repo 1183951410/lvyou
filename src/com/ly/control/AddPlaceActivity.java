@@ -35,7 +35,7 @@ public class AddPlaceActivity extends Activity {
 	private TextView tv1,tv2,tv3;
 	private EditText et1,et2;
 	private String title,content,type,id;
-	private String [] leibie ={"¾Æµê","ÂÃÓÎ¾°µã","»ğ³µÕ¾" };
+	private String [] leibie ={"é…’åº—","æ—…æ¸¸æ™¯ç‚¹","ç«è½¦ç«™" };
 	ArrayList<String> list=new ArrayList<String>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +80,7 @@ public class AddPlaceActivity extends Activity {
 				sd.execSQL("insert into "+AddPlaceHelper.table_name+" values(null,?,?,?,?)",new String[]{title,type,content,id});
 				sd.close();
 				
-				Toast.makeText(AddPlaceActivity.this, "Ìí¼Ó³É¹¦" ,Toast.LENGTH_LONG).show();
+				Toast.makeText(AddPlaceActivity.this, "æ·»åŠ æˆåŠŸ" ,Toast.LENGTH_LONG).show();
 				
 				Intent i=new Intent(AddPlaceActivity.this,LYAddMemoryActivity.class);
 				i.putExtra("result", id);

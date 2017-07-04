@@ -24,7 +24,7 @@ import android.view.View;
  * Title: LogoView
  * </p>
  * <p>
- * Description: ÓÃÓÚÏÔÊ¾½¥±äLogoµÄ×Ô¶¨ÒåÊÓÍ¼
+ * Description: ç”¨äºæ˜¾ç¤ºæ¸å˜Logoçš„è‡ªå®šä¹‰è§†å›¾
  * </p>
  * <p>
  * Copyright: Copyright (c) 2011
@@ -38,12 +38,12 @@ import android.view.View;
  */
 public class LogoView extends View {
 	/**
-	 * µ±Ç°Í¼Æ¬Í¸Ã÷¶È£¬0Îª´¿Í¸Ã÷£¬255Îª²»Í¸Ã÷
+	 * å½“å‰å›¾ç‰‡é€æ˜åº¦ï¼Œ0ä¸ºçº¯é€æ˜ï¼Œ255ä¸ºä¸é€æ˜
 	 * */
 	private int alpha = 0;
 
 	/**
-	 * ¹¹Ôì·½·¨
+	 * æ„é€ æ–¹æ³•
 	 * */
 	public LogoView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
@@ -51,7 +51,7 @@ public class LogoView extends View {
 	}
 
 	/**
-	 * ¹¹Ôì·½·¨
+	 * æ„é€ æ–¹æ³•
 	 * */
 	public LogoView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -59,30 +59,30 @@ public class LogoView extends View {
 	}
 
 	/**
-	 * Ó¦ÓÃÈí¼şµÄLOGOÍ¼Ïñ
+	 * åº”ç”¨è½¯ä»¶çš„LOGOå›¾åƒ
 	 * */
 	private Bitmap logo;
 
 	/**
-	 * ÖØ»æÊÓÍ¼µÄ·½·¨
+	 * é‡ç»˜è§†å›¾çš„æ–¹æ³•
 	 * 
 	 * @param alpha
-	 *            ±¾´ÎÖØ»æÊ±£¬LOGOÍ¼Æ¬µÄÍ¸Ã÷¶ÈÈ¡Öµ
+	 *            æœ¬æ¬¡é‡ç»˜æ—¶ï¼ŒLOGOå›¾ç‰‡çš„é€æ˜åº¦å–å€¼
 	 * */
 	public void repaint(int alpha) {
 		this.alpha = alpha;
 		//System.out.println("111111111111");
-		// Å×³öÖØ»æÊÂ¼ş
+		// æŠ›å‡ºé‡ç»˜äº‹ä»¶
 		invalidate();
 		
 	}
 
 	/**
-	 * ¹¹Ôì·½·¨
+	 * æ„é€ æ–¹æ³•
 	 * */
 	public LogoView(Context context) {
 		super(context);
-		// ¼ÓÔØÓ¦ÓÃÈí¼şLOGOÍ¼Æ¬
+		// åŠ è½½åº”ç”¨è½¯ä»¶LOGOå›¾ç‰‡
 		logo = BitmapFactory.decodeResource(context.getResources(),
 				R.drawable.welcome2);
 		// TODO Auto-generated constructor stub
@@ -92,13 +92,13 @@ public class LogoView extends View {
 	protected void onDraw(Canvas canvas) {
 		// TODO Auto-generated method stub
         //System.out.println("22222222");
-		// ÇåÆÁ
+		// æ¸…å±
 		canvas.drawColor(Color.WHITE);
-		// ´´½¨»­±Ê¶ÔÏó
+		// åˆ›å»ºç”»ç¬”å¯¹è±¡
 		Paint p = new Paint();
-		// ÉèÖÃ»­±Ê¶ÔÏóµÄÍ¸Ã÷¶ÈÎªµ±Ç°Í¸Ã÷¶ÈÈ¡Öµ
+		// è®¾ç½®ç”»ç¬”å¯¹è±¡çš„é€æ˜åº¦ä¸ºå½“å‰é€æ˜åº¦å–å€¼
 		p.setAlpha(alpha);
-		// ÔÚÊÓÍ¼ÉÏÀûÓÃ»­±Ê»æÖÆLogoÍ¼Ïñ
+		// åœ¨è§†å›¾ä¸Šåˆ©ç”¨ç”»ç¬”ç»˜åˆ¶Logoå›¾åƒ
 		canvas.drawBitmap(logo, 0.0f, 0.0f, p);
 	}
 

@@ -45,16 +45,16 @@ public class LYTabHostActivity extends TabActivity {
 	    Drawable photos = getResources().getDrawable(R.drawable.shan);
 		Drawable mypage = getResources().getDrawable(R.drawable.other);
 		
-		TabHost.TabSpec  tabspec1 = tabhost.newTabSpec("ÂÃÓÎ¼ÇÒä");
-		tabspec1.setIndicator("ÂÃÓÎ¼ÇÒä",home);
+		TabHost.TabSpec  tabspec1 = tabhost.newTabSpec("æ—…æ¸¸è®°å¿†");
+		tabspec1.setIndicator("æ—…æ¸¸è®°å¿†",home);
 		Intent g_intent = new Intent(LYTabHostActivity.this,LYMemoryActivity.class);
 		String id = getIntent().getStringExtra("result");
 		g_intent.putExtra("result", id);
 		tabspec1.setContent(g_intent);
 		tabhost.addTab(tabspec1);
 		
-		TabHost.TabSpec  tabspec2 = tabhost.newTabSpec("½á°éÓÎ");
-		tabspec2.setIndicator("½á°éÓÎ",friends);
+		TabHost.TabSpec  tabspec2 = tabhost.newTabSpec("ç»“ä¼´æ¸¸");
+		tabspec2.setIndicator("ç»“ä¼´æ¸¸",friends);
 		Intent g_intent1 = new Intent(LYTabHostActivity.this,LYTogetherActivity.class);
 		String id2 = getIntent().getStringExtra("result");
 		g_intent1.putExtra("result", id2);
@@ -62,16 +62,16 @@ public class LYTabHostActivity extends TabActivity {
 		tabhost.addTab(tabspec2);
 	
 		
-		TabHost.TabSpec  tabspec4 = tabhost.newTabSpec("ºÃÓÑ/¹Ø×¢Õß");
-		tabspec4.setIndicator("ºÃÓÑ/¹Ø×¢Õß",photos);
+		TabHost.TabSpec  tabspec4 = tabhost.newTabSpec("å¥½å‹/å…³æ³¨è€…");
+		tabspec4.setIndicator("å¥½å‹/å…³æ³¨è€…",photos);
 		Intent g_intent3 = new Intent(LYTabHostActivity.this,LYFriendsActivity.class);
 		String id3 = getIntent().getStringExtra("result");
 		g_intent3.putExtra("result", id3);
 		tabspec4.setContent(g_intent3);
 		tabhost.addTab(tabspec4);
 		
-		TabHost.TabSpec  tabspec5 = tabhost.newTabSpec("ÆäËû¹¦ÄÜ");
-		tabspec5.setIndicator("ÆäËû¹¦ÄÜ",mypage);
+		TabHost.TabSpec  tabspec5 = tabhost.newTabSpec("å…¶ä»–åŠŸèƒ½");
+		tabspec5.setIndicator("å…¶ä»–åŠŸèƒ½",mypage);
 		Intent g_intent4 = new Intent(LYTabHostActivity.this,LYOtherActivity.class);
 		String s = getIntent().getStringExtra("result");
 		g_intent4.putExtra("result", s);
@@ -172,7 +172,7 @@ public class LYTabHostActivity extends TabActivity {
 			 Map<String, String> childdata =null;
 			 
 			 if(list.size()==0){
-				 //Toast.makeText(getApplicationContext(), "Î´µÇÂ¼", Toast.LENGTH_SHORT).show();
+				 //Toast.makeText(getApplicationContext(), "æœªç™»å½•", Toast.LENGTH_SHORT).show();
 			 }else{
 				
 				 showmsg();
@@ -188,13 +188,13 @@ public class LYTabHostActivity extends TabActivity {
 	private void showmsg(){
 		  AlertDialog.Builder up = new AlertDialog.Builder(LYTabHostActivity.this);
 		up.setIcon(R.drawable.info);
-		up.setTitle("Î´¶ÁÏûÏ¢");
+		up.setTitle("æœªè¯»æ¶ˆæ¯");
 		View vv = LayoutInflater.from(LYTabHostActivity.this).inflate(R.layout.msg, null);
 		ListView landmark=(ListView)vv.findViewById(R.id.ListView01);
 		landmark.setAdapter(new myadapter(LYTabHostActivity.this , list));
 		//landmark.setAdapter(sa);
 		up.setView(vv);
-		up.setNegativeButton("ÒÑ¶Á", new DialogInterface.OnClickListener() {
+		up.setNegativeButton("å·²è¯»", new DialogInterface.OnClickListener() {
 			
 		public void onClick(DialogInterface dialog, int which) {
 					

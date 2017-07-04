@@ -52,21 +52,21 @@ public class LYTogetherActivity extends Activity {
 		bt2.setOnClickListener(l);
 	}
 	 private void checkButton() { 
-		  //����ֵС�ڵ���0����ʾ������ǰ��ҳ�ˣ��Ѿ����˵�һҳ�ˡ�
-		  //����ǰ��ҳ�İ�ť��Ϊ�����á�
+		  //索引值小于等于0，表示不能向前翻页了，已经到了第一页了。
+		  //将向前翻页的按钮设为不可用。
 		  if(count <=0){
 		    bt1.setEnabled(false);
 		    bt2.setEnabled(true);
 		  }
-		   /**ֵ�ĳ��ȼ�ȥǰ��ҳ�ĳ��ȣ�ʣ�µľ�����һҳ�ĳ��ȣ�
-		    * �����һҳ�ĳ��ȱ�View_CountС��
-		    * ��ʾ��������һҳ�ˣ�������û���ˡ�*/
-		   //�����ҳ�İ�ť��Ϊ�����á�
+		   /**值的长度减去前几页的长度，剩下的就是这一页的长度，
+		    * 如果这一页的长度比View_Count小，
+		    * 表示这是最后的一页了，后面在没有了。*/
+		   //将向后翻页的按钮设为不可用。
 		  else if(list.size()<=5){
 		     bt2.setEnabled(false);
 		     bt1.setEnabled(true);
 		  }
-		  //����2����ť����Ϊ���õġ�
+		  //否则将2个按钮都设为可用的。
 		   else {
 		    bt1.setEnabled(true);
 		    bt2.setEnabled(true);

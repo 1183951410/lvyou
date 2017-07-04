@@ -36,7 +36,7 @@ public class LYSendInfoActivity extends Activity {
         uid = getIntent().getStringExtra("result");
         ueid = getIntent().getStringExtra("ueid");
         SimpleDateFormat   formatter   =   new   SimpleDateFormat   ("yyyy-MM-dd  HH:mm:ss");  
-        Date   curDate   =   new   Date(System.currentTimeMillis());//获取当前时间             
+        Date   curDate   =   new   Date(System.currentTimeMillis());//鑾峰彇褰撳墠鏃堕棿             
         time  =   formatter.format(curDate);  
         bt.setOnClickListener(l);
     }
@@ -52,7 +52,7 @@ public class LYSendInfoActivity extends Activity {
 			Intent intent = new Intent(LYSendInfoActivity.this,LYTabHostActivity.class);
 			intent.putExtra("result", uid);
 			startActivity(intent);
-			Toast.makeText(LYSendInfoActivity.this, "发送成功！", Toast.LENGTH_LONG).show();
+			Toast.makeText(LYSendInfoActivity.this, "鍙戦�佹垚鍔燂紒", Toast.LENGTH_LONG).show();
 		}
 	};
 	Runnable r = new Runnable() {

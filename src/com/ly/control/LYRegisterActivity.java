@@ -148,19 +148,19 @@ public class LYRegisterActivity extends Activity {
 				
 					}
 					else{
-						Toast.makeText(LYRegisterActivity.this, "ÇëÊäÈëÕıÈ·µÄemail¸ñÊ½£¡", Toast.LENGTH_LONG).show();																														
+						Toast.makeText(LYRegisterActivity.this, "è¯·è¾“å…¥æ­£ç¡®çš„emailæ ¼å¼ï¼", Toast.LENGTH_LONG).show();																														
 					}
 					
 				}
 				else
 				{					
-					Toast.makeText(LYRegisterActivity.this, "ÇëÈ·ÈÏÁ½´ÎÃÜÂëÊäÈëÒ»ÖÂ£¡ ",
+					Toast.makeText(LYRegisterActivity.this, "è¯·ç¡®è®¤ä¸¤æ¬¡å¯†ç è¾“å…¥ä¸€è‡´ï¼ ",
 							Toast.LENGTH_LONG).show();										
 				}
 							
 			} 
 			else {
-					Toast.makeText(LYRegisterActivity.this, "ÇëÌîĞ´ÍêÕû×ÊÁÏ£¡ ",
+					Toast.makeText(LYRegisterActivity.this, "è¯·å¡«å†™å®Œæ•´èµ„æ–™ï¼ ",
 							Toast.LENGTH_LONG).show();
 			}	
 			//pd.show();
@@ -286,11 +286,11 @@ public class LYRegisterActivity extends Activity {
 				     String p=(String) msg.obj;
 				     
 				     if(p.equals("0")){
-				    	 Toast.makeText(LYRegisterActivity.this,"ÒÑ¾­´æÔÚµÄÓÃ»§£¬ÇëÖØĞÂÌîĞ´ÓÃ»§ĞÅÏ¢£¡", Toast.LENGTH_LONG).show();
+				    	 Toast.makeText(LYRegisterActivity.this,"å·²ç»å­˜åœ¨çš„ç”¨æˆ·ï¼Œè¯·é‡æ–°å¡«å†™ç”¨æˆ·ä¿¡æ¯ï¼", Toast.LENGTH_LONG).show();
 				     }
 				     else if(p.equals("1")){
 				    	 System.out.println("++++++------7:");
-				    	 Toast.makeText(LYRegisterActivity.this,"×¢²á³É¹¦£¡", Toast.LENGTH_LONG).show();
+				    	 Toast.makeText(LYRegisterActivity.this,"æ³¨å†ŒæˆåŠŸï¼", Toast.LENGTH_LONG).show();
 				    	 Intent intent=new Intent(LYRegisterActivity.this,LYLoginActivity.class);
 						 startActivity(intent);
 							

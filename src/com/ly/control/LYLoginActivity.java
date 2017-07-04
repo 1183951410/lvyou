@@ -154,7 +154,7 @@ public class LYLoginActivity extends Activity {
 			System.out.println("++++++++++++login:2");
 			String re = msg.obj + "";
 			if (re.equals("error")) {
-				Toast.makeText(LYLoginActivity.this, "µÇÂ¼Ê§°Ü,Çë¼ì²éÓÃ»§ÃûÃÜÂëÊÇ·ñÕıÈ·",
+				Toast.makeText(LYLoginActivity.this, "ç™»å½•å¤±è´¥,è¯·æ£€æŸ¥ç”¨æˆ·åå¯†ç æ˜¯å¦æ­£ç¡®",
 						Toast.LENGTH_LONG).show();
 				if (lh.getNo() != null) {
 
@@ -168,7 +168,7 @@ public class LYLoginActivity extends Activity {
 			} else {
 				result = re;
 				String ss[] = result.split(",");
-				Toast.makeText(LYLoginActivity.this, "»¶Ó­" + ss[2] + "½øÈëÂ¿ÓÑÌìÏÂĞĞ",
+				Toast.makeText(LYLoginActivity.this, "æ¬¢è¿" + ss[2] + "è¿›å…¥é©´å‹å¤©ä¸‹è¡Œ",
 						Toast.LENGTH_LONG).show();
 				Intent intent = new Intent(LYLoginActivity.this,
 						LYTabHostActivity.class);

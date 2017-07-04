@@ -35,8 +35,8 @@ private String s;
 	private String uname,pic;
 	private	HashMap<String,Object> map;
 	private ArrayList<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();
-	private String []pname={"ÓÃ»§×¢²á","µÇÂ½","ĞÂ½¨¼ÇÒä","¼ÌĞøÎ´·¢²¼µÄ¼ÇÒä","·¢Æğ½á°éÓÎ"};
-	private String []pcontent={"ÒÔÓÃ»§µÄÉí·İµÇÂ¼½øÈëÏµÍ³","ÒÔÓÃ»§µÄÉí·İµÇÂ¼½øÈëÏµÍ³","´´½¨Ò»ÌõĞÂµÄÂÃÓÎ¼ÇÒä","ÔÚÔ­À´·¢²¼µÄ¼ÇÒä»ù´¡ÉÏ¼ÌĞøÍêÉÆ¼ÇÒäÄÚÈİ","´´½¨Ò»Ìõ½á°éÓÎĞÅÏ¢"};
+	private String []pname={"ç”¨æˆ·æ³¨å†Œ","ç™»é™†","æ–°å»ºè®°å¿†","ç»§ç»­æœªå‘å¸ƒçš„è®°å¿†","å‘èµ·ç»“ä¼´æ¸¸"};
+	private String []pcontent={"ä»¥ç”¨æˆ·çš„èº«ä»½ç™»å½•è¿›å…¥ç³»ç»Ÿ","ä»¥ç”¨æˆ·çš„èº«ä»½ç™»å½•è¿›å…¥ç³»ç»Ÿ","åˆ›å»ºä¸€æ¡æ–°çš„æ—…æ¸¸è®°å¿†","åœ¨åŸæ¥å‘å¸ƒçš„è®°å¿†åŸºç¡€ä¸Šç»§ç»­å®Œå–„è®°å¿†å†…å®¹","åˆ›å»ºä¸€æ¡ç»“ä¼´æ¸¸ä¿¡æ¯"};
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -81,7 +81,7 @@ private String s;
 			}
 			if(arg2==1&&s!=null)
 			{
-				Toast.makeText(LYOtherActivity.this, "ÒÑ¾­µÇÂ¼£¬ÎŞĞèÔÙ´ÎµÇÂ¼£¡", Toast.LENGTH_LONG).show();
+				Toast.makeText(LYOtherActivity.this, "å·²ç»ç™»å½•ï¼Œæ— éœ€å†æ¬¡ç™»å½•ï¼", Toast.LENGTH_LONG).show();
 			}
 			if(arg2==2&&s!=null)
 			{
@@ -93,7 +93,7 @@ private String s;
 			if(arg2==2&&s==null)
 			{
 				
-				Toast.makeText(LYOtherActivity.this, "ÇëµÇÂ½ºóÔÙÊ¹ÓÃ¸Ã¹¦ÄÜ£¡", Toast.LENGTH_LONG).show();
+				Toast.makeText(LYOtherActivity.this, "è¯·ç™»é™†åå†ä½¿ç”¨è¯¥åŠŸèƒ½ï¼", Toast.LENGTH_LONG).show();
 			}
 			if(arg2==3&&s!=null){
 				Intent intent = new Intent(LYOtherActivity.this,StoreMemoryActivity.class);
@@ -102,7 +102,7 @@ private String s;
 			}
 			if(arg2==3&&s==null){
 				
-				Toast.makeText(LYOtherActivity.this, "ÇëµÇÂ½ºóÔÙÊ¹ÓÃ¸Ã¹¦ÄÜ£¡", Toast.LENGTH_LONG).show();
+				Toast.makeText(LYOtherActivity.this, "è¯·ç™»é™†åå†ä½¿ç”¨è¯¥åŠŸèƒ½ï¼", Toast.LENGTH_LONG).show();
 			}
 			if(arg2==4&&s!=null)
 			{
@@ -113,7 +113,7 @@ private String s;
 			if(arg2==4&&s==null)
 			{
 				
-				Toast.makeText(LYOtherActivity.this, "ÇëµÇÂ½ºóÔÙÊ¹ÓÃ¸Ã¹¦ÄÜ£¡", Toast.LENGTH_LONG).show();
+				Toast.makeText(LYOtherActivity.this, "è¯·ç™»é™†åå†ä½¿ç”¨è¯¥åŠŸèƒ½ï¼", Toast.LENGTH_LONG).show();
 			}
 			
 		}

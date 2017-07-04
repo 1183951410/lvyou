@@ -29,7 +29,7 @@ import com.ly.bean.FriendListBean;
 import com.ly.common.GLOBAL;
 
 /**
- * ¼Ì³ĞExpandableListActivityÀà
+ * ç»§æ‰¿ExpandableListActivityç±»
  */
 public class LYFriendsActivity extends Activity {
 	
@@ -64,63 +64,63 @@ public class LYFriendsActivity extends Activity {
 		t3.start();
 		//System.out.println(id);
 	   elvExpandableListView = (ExpandableListView) findViewById(R.id.list);
-		// ´´½¨Ò»¼¶ÌõÄ¿
+		// åˆ›å»ºä¸€çº§æ¡ç›®
 		groups = new ArrayList<Map<String, String>>();
-		// ´´½¨Á½¸öÒ»¼¶ÌõÄ¿±êÌâ
+		// åˆ›å»ºä¸¤ä¸ªä¸€çº§æ¡ç›®æ ‡é¢˜
 		Map<String, String> group1 = new HashMap<String, String>();
-		group1.put("group", "ÎÒµÄºÃÓÑÉêÇë");
+		group1.put("group", "æˆ‘çš„å¥½å‹ç”³è¯·");
 		Map<String, String> group2 = new HashMap<String, String>();
-		group2.put("group", "ÎÒµÄºÃÓÑ");
+		group2.put("group", "æˆ‘çš„å¥½å‹");
 		Map<String, String> group3 = new HashMap<String, String>();
-		group3.put("group", "ÎÒµÄ¹Ø×¢Õß");
+		group3.put("group", "æˆ‘çš„å…³æ³¨è€…");
 		groups.add(group1);
 		groups.add(group2);
 		groups.add(group3);
-		// ´´½¨Ò»¼¶ÌõÄ¿ÏÂµÄµÄ¶ş¼¶ÌõÄ¿
+		// åˆ›å»ºä¸€çº§æ¡ç›®ä¸‹çš„çš„äºŒçº§æ¡ç›®
 //		List<Map<String, String>> child1 = new ArrayList<Map<String, String>>();
-//		// Í¬ÑùÊÇÔÚÒ»¼¶ÌõÄ¿Ä¿Â¼ÏÂ´´½¨Á½¸ö¶ÔÓ¦µÄ¶ş¼¶ÌõÄ¿Ä¿Â¼
+//		// åŒæ ·æ˜¯åœ¨ä¸€çº§æ¡ç›®ç›®å½•ä¸‹åˆ›å»ºä¸¤ä¸ªå¯¹åº”çš„äºŒçº§æ¡ç›®ç›®å½•
 //		Map<String, String> childdata1 = new HashMap<String, String>();
-//		childdata1.put("child", "µÒÈÊ½Ü");
+//		childdata1.put("child", "ç‹„ä»æ°");
 //		Map<String, String> childdata2 = new HashMap<String, String>();
-//		childdata2.put("child", "ÀîÔª·¼");
+//		childdata2.put("child", "æå…ƒèŠ³");
 //		child1.add(childdata1);
 //		child1.add(childdata2);
-//		// Í¬ÉÏ
+//		// åŒä¸Š
 		child1 = new ArrayList<Map<String, String>>();
 		child2 = new ArrayList<Map<String, String>>();
 	/*	Map<String, String> childdata3 = new HashMap<String, String>();
-		childdata3.put("child", "ÔøÌ©");
+		childdata3.put("child", "æ›¾æ³°");
 		Map<String, String> childdata4 = new HashMap<String, String>();
-		childdata4.put("child", "ÈçÑà");
+		childdata4.put("child", "å¦‚ç‡•");
 		child2.add(childdata3);
 		child2.add(childdata4);*/
 
 	
-	// Í¬ÉÏ
+	// åŒä¸Š
 	    child3 = new ArrayList<Map<String, String>>();
 //		Map<String, String> childdata5 = new HashMap<String, String>();
-//		childdata5.put("child", "°×Õ¹ÌÃ");
+//		childdata5.put("child", "ç™½å±•å ‚");
 //		Map<String, String> childdata6 = new HashMap<String, String>();
-//		childdata6.put("child", "ÄªĞ¡±´");
+//		childdata6.put("child", "è«å°è´");
 //		child3.add(childdata5);
 //		child3.add(childdata6);
-//		// ½«¶ş¼¶ÌõÄ¿·ÅÔÚÒ»¸ö¼¯ºÏÀï£¬¹©ÏÔÊ¾Ê±Ê¹ÓÃ
+//		// å°†äºŒçº§æ¡ç›®æ”¾åœ¨ä¸€ä¸ªé›†åˆé‡Œï¼Œä¾›æ˜¾ç¤ºæ—¶ä½¿ç”¨
 	    childs = new ArrayList<List<Map<String, String>>>();
 		childs.add(child1);
 		childs.add(child2);
 		childs.add(child3);
 
 		/**
-		 * Ê¹ÓÃSimpleExpandableListAdapterÏÔÊ¾ExpandableListView 
-		 * ²ÎÊı1.ÉÏÏÂÎÄ¶ÔÏóContext
-		 * ²ÎÊı2.Ò»¼¶ÌõÄ¿Ä¿Â¼¼¯ºÏ 
-		 * ²ÎÊı3.Ò»¼¶ÌõÄ¿¶ÔÓ¦µÄ²¼¾ÖÎÄ¼ş 
-		 * ²ÎÊı4.fromto£¬¾ÍÊÇmapÖĞµÄkey£¬Ö¸¶¨ÒªÏÔÊ¾µÄ¶ÔÏó
-		 * ²ÎÊı5.Óë²ÎÊı4¶ÔÓ¦£¬Ö¸¶¨ÒªÏÔÊ¾ÔÚgroupsÖĞµÄid 
-		 * ²ÎÊı6.¶ş¼¶ÌõÄ¿Ä¿Â¼¼¯ºÏ 
-		 * ²ÎÊı7.¶ş¼¶ÌõÄ¿¶ÔÓ¦µÄ²¼¾ÖÎÄ¼ş
-		 * ²ÎÊı8.fromto£¬¾ÍÊÇmapÖĞµÄkey£¬Ö¸¶¨ÒªÏÔÊ¾µÄ¶ÔÏó 
-		 * ²ÎÊı9.Óë²ÎÊı8¶ÔÓ¦£¬Ö¸¶¨ÒªÏÔÊ¾ÔÚchildsÖĞµÄid
+		 * ä½¿ç”¨SimpleExpandableListAdapteræ˜¾ç¤ºExpandableListView 
+		 * å‚æ•°1.ä¸Šä¸‹æ–‡å¯¹è±¡Context
+		 * å‚æ•°2.ä¸€çº§æ¡ç›®ç›®å½•é›†åˆ 
+		 * å‚æ•°3.ä¸€çº§æ¡ç›®å¯¹åº”çš„å¸ƒå±€æ–‡ä»¶ 
+		 * å‚æ•°4.fromtoï¼Œå°±æ˜¯mapä¸­çš„keyï¼ŒæŒ‡å®šè¦æ˜¾ç¤ºçš„å¯¹è±¡
+		 * å‚æ•°5.ä¸å‚æ•°4å¯¹åº”ï¼ŒæŒ‡å®šè¦æ˜¾ç¤ºåœ¨groupsä¸­çš„id 
+		 * å‚æ•°6.äºŒçº§æ¡ç›®ç›®å½•é›†åˆ 
+		 * å‚æ•°7.äºŒçº§æ¡ç›®å¯¹åº”çš„å¸ƒå±€æ–‡ä»¶
+		 * å‚æ•°8.fromtoï¼Œå°±æ˜¯mapä¸­çš„keyï¼ŒæŒ‡å®šè¦æ˜¾ç¤ºçš„å¯¹è±¡ 
+		 * å‚æ•°9.ä¸å‚æ•°8å¯¹åº”ï¼ŒæŒ‡å®šè¦æ˜¾ç¤ºåœ¨childsä¸­çš„id
 		 */
 	     adapter = new SimpleExpandableListAdapter(
 					this, groups, R.layout.groups, new String[] { "group" },
@@ -138,32 +138,32 @@ public class LYFriendsActivity extends Activity {
 		ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) menuInfo;
 		int type = ExpandableListView
 				.getPackedPositionType(info.packedPosition);
-		// Èç¹ûÀàĞÍÊÇ×ÓÔªËØ
+		// å¦‚æœç±»å‹æ˜¯å­å…ƒç´ 
 		if (type == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
-			// ×éindex
+			// ç»„index
 			int groupPos = ExpandableListView
 					.getPackedPositionGroup(info.packedPosition);
 
 			switch (groupPos) {
 
-			// ºÃÓÑÉêÇë×é
+			// å¥½å‹ç”³è¯·ç»„
 			case 0:
-				menu.setHeaderTitle("ÊÇ·ñÍ¬ÒâÉêÇë");
-				menu.add(0, 0, 0, "Í¬Òâ");
-				menu.add(0, 1, 0, "²»Í¬Òâ");
+				menu.setHeaderTitle("æ˜¯å¦åŒæ„ç”³è¯·");
+				menu.add(0, 0, 0, "åŒæ„");
+				menu.add(0, 1, 0, "ä¸åŒæ„");
 				break;
 
-			// ºÃÓÑ×é
+			// å¥½å‹ç»„
 			case 1:
-				menu.setHeaderTitle("ºÃÓÑ²Ëµ¥");
-				menu.add(0, 0, 0, "²é¿´ºÃÓÑµÄËùÓĞ¼ÇÒä");
-				menu.add(0, 1, 0, "¸øºÃÓÑ·¢ËÍÏûÏ¢");
+				menu.setHeaderTitle("å¥½å‹èœå•");
+				menu.add(0, 0, 0, "æŸ¥çœ‹å¥½å‹çš„æ‰€æœ‰è®°å¿†");
+				menu.add(0, 1, 0, "ç»™å¥½å‹å‘é€æ¶ˆæ¯");
 				break;
 
-			// ¹Ø×¢Õß×é
+			// å…³æ³¨è€…ç»„
 			case 2:
-				menu.setHeaderTitle("¹Ø×¢Õß²Ëµ¥");
-				menu.add(0, 0, 0, "²é¿´¹Ø×¢ÕßµÄËùÓĞ¼ÇÒä");
+				menu.setHeaderTitle("å…³æ³¨è€…èœå•");
+				menu.add(0, 0, 0, "æŸ¥çœ‹å…³æ³¨è€…çš„æ‰€æœ‰è®°å¿†");
 				break;
 			}
 
@@ -175,40 +175,40 @@ public class LYFriendsActivity extends Activity {
 
 	public boolean onContextItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
-		// »ñÈ¡¿ÉÊÕËõÁĞ±íµÄ¸½¼ÓĞÅÏ¢
+		// è·å–å¯æ”¶ç¼©åˆ—è¡¨çš„é™„åŠ ä¿¡æ¯
 		ExpandableListContextMenuInfo info = (ExpandableListContextMenuInfo) item
 				.getMenuInfo();
 
-		// »ñÈ¡ÀàĞÍ£¨ÔÚ×é±êÇ©ÉÏÕ¹ÏÖ²Ëµ¥£¬»¹ÊÇÔÚ×Ó±êÇ©ÉÏÕ¹ÏÖ²Ëµ¥£©
+		// è·å–ç±»å‹ï¼ˆåœ¨ç»„æ ‡ç­¾ä¸Šå±•ç°èœå•ï¼Œè¿˜æ˜¯åœ¨å­æ ‡ç­¾ä¸Šå±•ç°èœå•ï¼‰
 		int type = ExpandableListView
 				.getPackedPositionType(info.packedPosition);
-		// Èç¹ûÔÚ×Ó±êÇ©ÉÏÕ¹ÏÖ²Ëµ¥
+		// å¦‚æœåœ¨å­æ ‡ç­¾ä¸Šå±•ç°èœå•
 		if (type == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
-			// »ñÈ¡×éIndex
+			// è·å–ç»„Index
 			int groupPos = ExpandableListView
 					.getPackedPositionGroup(info.packedPosition);
-			// »ñÈ¡×ÓÔªËØÔÚµ±Ç°×éµÄIndex
+			// è·å–å­å…ƒç´ åœ¨å½“å‰ç»„çš„Index
 			int childPos = ExpandableListView
 					.getPackedPositionChild(info.packedPosition);
 
-			// ÅĞ¶¨×é±ğ
+			// åˆ¤å®šç»„åˆ«
 			switch (groupPos) {
 
-			// ºÃÓÑÉêÇë
+			// å¥½å‹ç”³è¯·
 			case 0:
 
 				switch (item.getItemId()) {
 				
-				case 0:// Í¬Òâ¼ÓÎÒÎªºÃÓÑ
-					Toast.makeText(this, "Í¬Òâ¼ÓÎªºÃÓÑ ", Toast.LENGTH_SHORT).show();
+				case 0:// åŒæ„åŠ æˆ‘ä¸ºå¥½å‹
+					Toast.makeText(this, "åŒæ„åŠ ä¸ºå¥½å‹ ", Toast.LENGTH_SHORT).show();
 					aid = list2.get(item.getItemId())[0];
 					ueid = list2.get(item.getItemId())[1];
 					Thread t6 = new Thread(r2);
 					t6.start();
 					resetms();
 					break;
-				case 1:// ²»Í¬Òâ¼ÓÎÒÎªºÃÓÑ
-					Toast.makeText(this, "²»Í¬Òâ¼ÓÎªºÃÓÑ ", Toast.LENGTH_SHORT).show();
+				case 1:// ä¸åŒæ„åŠ æˆ‘ä¸ºå¥½å‹
+					Toast.makeText(this, "ä¸åŒæ„åŠ ä¸ºå¥½å‹ ", Toast.LENGTH_SHORT).show();
 					
 					fid = list1.get(item.getItemId()-1)[0];
 					aid = list2.get(item.getItemId()-1)[0];
@@ -221,8 +221,8 @@ public class LYFriendsActivity extends Activity {
 				break;
 			case 1:
 				switch (item.getItemId()) {
-				case 0:// ²é¿´ËùÓĞ¼ÇÒä
-					Toast.makeText(this, "²é¿´ºÃÓÑ¼ÇÒä ", Toast.LENGTH_SHORT).show();
+				case 0:// æŸ¥çœ‹æ‰€æœ‰è®°å¿†
+					Toast.makeText(this, "æŸ¥çœ‹å¥½å‹è®°å¿† ", Toast.LENGTH_SHORT).show();
 					//ueid = list.get(item.getItemId())[3];
 					 ueid = list.get(childPos)[3];
 					
@@ -232,8 +232,8 @@ public class LYFriendsActivity extends Activity {
 					intent.putExtra("result", id);
 					startActivity(intent);
 					break;
-				case 1:// ·¢ËÍÏûÏ¢
-					Toast.makeText(this, "·¢ËÍÏûÏ¢", Toast.LENGTH_LONG).show();
+				case 1:// å‘é€æ¶ˆæ¯
+					Toast.makeText(this, "å‘é€æ¶ˆæ¯", Toast.LENGTH_LONG).show();
 					//ueid = list.get(item.getItemId()-1)[3];
 					 ueid = list.get(childPos)[3];
 					Intent intent2 =new Intent(LYFriendsActivity.this,LYSendInfoActivity.class); 
@@ -247,8 +247,8 @@ public class LYFriendsActivity extends Activity {
 
 			case 2:
 
-				// ²é¿´¹Ø×¢ÕßÏûÏ¢
-				Toast.makeText(this, "²é¿´¹Ø×¢Õß¼ÇÒä", Toast.LENGTH_SHORT).show();
+				// æŸ¥çœ‹å…³æ³¨è€…æ¶ˆæ¯
+				Toast.makeText(this, "æŸ¥çœ‹å…³æ³¨è€…è®°å¿†", Toast.LENGTH_SHORT).show();
 				//ueid = list.get(item.getItemId())[3];
 				 ueid = list.get(childPos)[3];
 				Intent intent =new Intent(LYFriendsActivity.this,LYFriendsMeActivity.class); 
@@ -264,7 +264,7 @@ public class LYFriendsActivity extends Activity {
 
 		return false;
 	}
-	 //  ÅóÓÑÏß³Ì
+	 //  æœ‹å‹çº¿ç¨‹
 Runnable r3 = new Runnable() {
 		
 
@@ -317,7 +317,7 @@ Runnable r3 = new Runnable() {
 			 Map<String, String> childdata =null;
 			 
 			 if(list1.size()==0&&id==null){
-				 Toast.makeText(getApplicationContext(), "Î´µÇÂ¼", Toast.LENGTH_SHORT).show();
+				 Toast.makeText(getApplicationContext(), "æœªç™»å½•", Toast.LENGTH_SHORT).show();
 			 }else{
 				 for(int i=0;i<list1.size();i++){
 					  childdata = new HashMap<String, String>();
@@ -339,7 +339,7 @@ Runnable r3 = new Runnable() {
 		 
 	  };
 	
-	  //  ¹Ø×¢ÕßÏß³Ì
+	  //  å…³æ³¨è€…çº¿ç¨‹
 	  Runnable r4 = new Runnable() {
 			
 
@@ -392,7 +392,7 @@ Runnable r3 = new Runnable() {
 				 lista =(ArrayList<String[]>) msg.obj;
 				 Map<String, String> childdata =null;
 				 if(lista.size()==0){
-					 //Toast.makeText(getApplicationContext(), "Î´µÇÂ¼", Toast.LENGTH_SHORT).show();
+					 //Toast.makeText(getApplicationContext(), "æœªç™»å½•", Toast.LENGTH_SHORT).show();
 				 }else{
 				 for(int i=0;i<lista.size();i++){
 				  childdata = new HashMap<String, String>();
@@ -460,11 +460,11 @@ Runnable r3 = new Runnable() {
 						  list2 =(ArrayList<String[]>) msg.obj;
 						 Map<String, String> childdata =null;
 						 if(list2.size()==0){
-							 //Toast.makeText(getApplicationContext(), "Î´µÇÂ¼", Toast.LENGTH_SHORT).show();
+							 //Toast.makeText(getApplicationContext(), "æœªç™»å½•", Toast.LENGTH_SHORT).show();
 						 }else{
 						 for(int i=0;i<list2.size();i++){
 						  childdata = new HashMap<String, String>();
-						 childdata.put("child","ÓÃ»§"+list2.get(i)[4]+"ÏëÉêÇëÄú¼ÓÎªºÃÓÑ!" );
+						 childdata.put("child","ç”¨æˆ·"+list2.get(i)[4]+"æƒ³ç”³è¯·æ‚¨åŠ ä¸ºå¥½å‹!" );
 						 child1.add(childdata);
 						 }
 						/* for(int i=0;i<child3.size();i++){

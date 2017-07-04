@@ -42,11 +42,11 @@ public class LYAddMemoryActivity extends Activity {
 	private String [] str00;
 	private String [] str01;
 	private String str02[][]={
-			{"ÇëÑ¡Ôñ"},
-			{"¹ş¶û±õ","¼ÑÄ¾Ë¹","´óÇì"},
-			{"³¤´º","¼ªÁÖ","ÁÉÄş"},
-			{"ÉòÑô","´óÁ¬","°°É½"},
-			{"¹ãÖİ","ÏÃÃÅ","ÉîÛÚ"}
+			{"è¯·é€‰æ‹©"},
+			{"å“ˆå°”æ»¨","ä½³æœ¨æ–¯","å¤§åº†"},
+			{"é•¿æ˜¥","å‰æ—","è¾½å®"},
+			{"æ²ˆé˜³","å¤§è¿","éå±±"},
+			{"å¹¿å·","å¦é—¨","æ·±åœ³"}
 	};
 	private String []str03;
 	private Spinner sp1,sp2,sp3;
@@ -88,7 +88,7 @@ public class LYAddMemoryActivity extends Activity {
 
 		
 		SimpleDateFormat   formatter   =   new   SimpleDateFormat   ("yyyy-MM-dd  HH:mm:ss");  
-        Date   curDate   =   new   Date(System.currentTimeMillis());//»ñÈ¡µ±Ç°Ê±¼ä             
+        Date   curDate   =   new   Date(System.currentTimeMillis());//è·å–å½“å‰æ—¶é—´             
         time  =   formatter.format(curDate);  
         nll = getIntent().getStringExtra("nll");
 		pd = new ProgressDialog(this);
@@ -137,14 +137,14 @@ public class LYAddMemoryActivity extends Activity {
 	    sp2=(Spinner) findViewById(R.id.Spinner02);
 	    sp3=(Spinner) findViewById(R.id.Spinner03);
 		
-	    str00=new String[]{"ÖĞ¹ú"};
+	    str00=new String[]{"ä¸­å›½"};
 	    
 	    SpinnerAdapter adapter00= new SpinnerAdapter(this,android.R.layout.simple_spinner_item,str00);
 	    adapter00.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	    sp1.setAdapter(adapter00);	
 	    
 	    
-	    str01=new String[]{"ÇëÑ¡Ôñ","ºÚÁú½­","¼ªÁÖÊ¡","ÁÉÄşÊ¡","¹ã¶«Ê¡"};
+	    str01=new String[]{"è¯·é€‰æ‹©","é»‘é¾™æ±Ÿ","å‰æ—çœ","è¾½å®çœ","å¹¿ä¸œçœ"};
 	    SpinnerAdapter adapter01=new SpinnerAdapter(this,android.R.layout.simple_spinner_item,str01);
 		adapter01.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		sp2.setAdapter(adapter01); 
@@ -273,7 +273,7 @@ public class LYAddMemoryActivity extends Activity {
 				Intent intent = new Intent(LYAddMemoryActivity.this,StoreMemoryActivity.class);
 				intent.putExtra("result", id);
 				startActivity(intent);
-				Toast.makeText(LYAddMemoryActivity.this, "±£´æ¼ÇÒäµ½±¾µØ³É¹¦£¡", Toast.LENGTH_LONG).show();
+				Toast.makeText(LYAddMemoryActivity.this, "ä¿å­˜è®°å¿†åˆ°æœ¬åœ°æˆåŠŸï¼", Toast.LENGTH_LONG).show();
 
 			}
 		}
@@ -351,12 +351,12 @@ public class LYAddMemoryActivity extends Activity {
 			  String re = msg.obj+"";
 			  if(re.equals("error"))
 			  {
-				  Toast.makeText(LYAddMemoryActivity.this, "·¢²¼Ê§°Ü", Toast.LENGTH_LONG).show();
+				  Toast.makeText(LYAddMemoryActivity.this, "å‘å¸ƒå¤±è´¥", Toast.LENGTH_LONG).show();
 				 
 			  }
 			  else
 			  {				
-				  Toast.makeText(LYAddMemoryActivity.this, "·¢²¼³É¹¦", Toast.LENGTH_LONG).show();
+				  Toast.makeText(LYAddMemoryActivity.this, "å‘å¸ƒæˆåŠŸ", Toast.LENGTH_LONG).show();
 				  
 			  }
 		  };

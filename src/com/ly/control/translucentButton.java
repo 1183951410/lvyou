@@ -73,7 +73,7 @@ public class translucentButton extends Activity {
     	public void onClick(View v) {
     		if(otherid.equals(hostid)||hostid==null)			
 				{
-				Toast.makeText(translucentButton.this, "Ìí¼ÓÊ§°Ü£¬Î´µÇÂ¼»òÕßID³åÍ»Çë¼ì²é", Toast.LENGTH_LONG).show();
+				Toast.makeText(translucentButton.this, "æ·»åŠ å¤±è´¥ï¼Œæœªç™»å½•æˆ–è€…IDå†²çªè¯·æ£€æŸ¥", Toast.LENGTH_LONG).show();
 				}
 				else
 				{
@@ -89,7 +89,7 @@ public class translucentButton extends Activity {
     	public void onClick(View v) {
     		if(otherid.equals(hostid)||hostid==null)			
 			{
-			Toast.makeText(translucentButton.this, "Ìí¼ÓÊ§°Ü£¬Î´µÇÂ¼»òÕßID³åÍ»Çë¼ì²é", Toast.LENGTH_LONG).show();
+			Toast.makeText(translucentButton.this, "æ·»åŠ å¤±è´¥ï¼Œæœªç™»å½•æˆ–è€…IDå†²çªè¯·æ£€æŸ¥", Toast.LENGTH_LONG).show();
 			}
 			else
 			{
@@ -162,9 +162,9 @@ public class translucentButton extends Activity {
 			  public void handleMessage(android.os.Message msg) {
 				String result=(String) msg.obj;
 				if(result.equals("error")){
-					Toast.makeText(translucentButton.this, "Ìí¼ÓÊ§°Ü£¬Î´µÇÂ¼»òÕßID³åÍ»Çë¼ì²é", Toast.LENGTH_LONG).show();
+					Toast.makeText(translucentButton.this, "æ·»åŠ å¤±è´¥ï¼Œæœªç™»å½•æˆ–è€…IDå†²çªè¯·æ£€æŸ¥", Toast.LENGTH_LONG).show();
 				}else{
-					Toast.makeText(translucentButton.this, "Ìí¼Ó³É¹¦", Toast.LENGTH_LONG).show();
+					Toast.makeText(translucentButton.this, "æ·»åŠ æˆåŠŸ", Toast.LENGTH_LONG).show();
 					
 				}
 			  };
@@ -223,9 +223,9 @@ public class translucentButton extends Activity {
 				  public void handleMessage(android.os.Message msg) {
 					String result=(String) msg.obj;
 					if(result.equals("error")){
-						Toast.makeText(translucentButton.this, "Ìí¼ÓÊ§°Ü£¬Î´µÇÂ¼»òÕßID³åÍ»Çë¼ì²é", Toast.LENGTH_LONG).show();
+						Toast.makeText(translucentButton.this, "æ·»åŠ å¤±è´¥ï¼Œæœªç™»å½•æˆ–è€…IDå†²çªè¯·æ£€æŸ¥", Toast.LENGTH_LONG).show();
 					}else{
-						Toast.makeText(translucentButton.this, "ÑéÖ¤ĞÅÏ¢ÒÑ¾­·¢ËÍ", Toast.LENGTH_LONG).show();
+						Toast.makeText(translucentButton.this, "éªŒè¯ä¿¡æ¯å·²ç»å‘é€", Toast.LENGTH_LONG).show();
 					}
 				  };
 			  };

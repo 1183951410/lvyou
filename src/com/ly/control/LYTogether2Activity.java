@@ -51,7 +51,7 @@ public class LYTogether2Activity extends Activity {
 		et3 = (EditText) findViewById(R.id.EditText03);
 		bt = (Button) findViewById(R.id.Button01);
 		SimpleDateFormat   formatter   =   new   SimpleDateFormat   ("yyyy-MM-dd  HH:mm:ss");  
-        Date   curDate   =   new   Date(System.currentTimeMillis());//»ñÈ¡µ±Ç°Ê±¼ä 
+        Date   curDate   =   new   Date(System.currentTimeMillis());//è·å–å½“å‰æ—¶é—´ 
         gtime  =   formatter.format(curDate);  
 		id = getIntent().getStringExtra("result");
 		pd=new ProgressDialog(this);
@@ -141,7 +141,7 @@ Runnable r = new Runnable() {
 	};
 	
 	/**
-	 * @Description: TODO µ¯³öÈÕÆÚÊ±¼äÑ¡ÔñÆ÷
+	 * @Description: TODO å¼¹å‡ºæ—¥æœŸæ—¶é—´é€‰æ‹©å™¨
 	 */
 	private void showDateTimePicker() {
 		Calendar calendar = Calendar.getInstance();
@@ -151,7 +151,7 @@ Runnable r = new Runnable() {
 		int hour = calendar.get(Calendar.HOUR_OF_DAY);
 		int minute = calendar.get(Calendar.MINUTE);
 
-		// Ìí¼Ó´óĞ¡ÔÂÔÂ·İ²¢½«Æä×ª»»Îªlist,·½±ãÖ®ºóµÄÅĞ¶Ï
+		// æ·»åŠ å¤§å°æœˆæœˆä»½å¹¶å°†å…¶è½¬æ¢ä¸ºlist,æ–¹ä¾¿ä¹‹åçš„åˆ¤æ–­
 		String[] months_big = { "1", "3", "5", "7", "8", "10", "12" };
 		String[] months_little = { "4", "6", "9", "11" };
 
@@ -159,60 +159,60 @@ Runnable r = new Runnable() {
 		final List<String> list_little = Arrays.asList(months_little);
 
 		dialog = new Dialog(this);
-		dialog.setTitle("ÇëÑ¡ÔñÈÕÆÚÓëÊ±¼ä");
-		// ÕÒµ½dialogµÄ²¼¾ÖÎÄ¼ş
+		dialog.setTitle("è¯·é€‰æ‹©æ—¥æœŸä¸æ—¶é—´");
+		// æ‰¾åˆ°dialogçš„å¸ƒå±€æ–‡ä»¶
 		LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 		View view = inflater.inflate(R.layout.time_layout, null);
 
-		// Äê
+		// å¹´
 		final WheelView wv_year = (WheelView) view.findViewById(R.id.year);
-		wv_year.setAdapter(new NumericWheelAdapter(START_YEAR, END_YEAR));// ÉèÖÃ"Äê"µÄÏÔÊ¾Êı¾İ
-		wv_year.setCyclic(true);// ¿ÉÑ­»·¹ö¶¯
-		wv_year.setLabel("Äê");// Ìí¼ÓÎÄ×Ö
-		wv_year.setCurrentItem(year - START_YEAR);// ³õÊ¼»¯Ê±ÏÔÊ¾µÄÊı¾İ
+		wv_year.setAdapter(new NumericWheelAdapter(START_YEAR, END_YEAR));// è®¾ç½®"å¹´"çš„æ˜¾ç¤ºæ•°æ®
+		wv_year.setCyclic(true);// å¯å¾ªç¯æ»šåŠ¨
+		wv_year.setLabel("å¹´");// æ·»åŠ æ–‡å­—
+		wv_year.setCurrentItem(year - START_YEAR);// åˆå§‹åŒ–æ—¶æ˜¾ç¤ºçš„æ•°æ®
 
-		// ÔÂ
+		// æœˆ
 		final WheelView wv_month = (WheelView) view.findViewById(R.id.month);
 		wv_month.setAdapter(new NumericWheelAdapter(1, 12));
 		wv_month.setCyclic(true);
-		wv_month.setLabel("ÔÂ");
+		wv_month.setLabel("æœˆ");
 		wv_month.setCurrentItem(month);
 
-		// ÈÕ
+		// æ—¥
 		final WheelView wv_day = (WheelView) view.findViewById(R.id.day);
 		wv_day.setCyclic(true);
-		// ÅĞ¶Ï´óĞ¡ÔÂ¼°ÊÇ·ñÈòÄê,ÓÃÀ´È·¶¨"ÈÕ"µÄÊı¾İ
+		// åˆ¤æ–­å¤§å°æœˆåŠæ˜¯å¦é—°å¹´,ç”¨æ¥ç¡®å®š"æ—¥"çš„æ•°æ®
 		if (list_big.contains(String.valueOf(month + 1))) {
 			wv_day.setAdapter(new NumericWheelAdapter(1, 31));
 		} else if (list_little.contains(String.valueOf(month + 1))) {
 			wv_day.setAdapter(new NumericWheelAdapter(1, 30));
 		} else {
-			// ÈòÄê
+			// é—°å¹´
 			if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
 				wv_day.setAdapter(new NumericWheelAdapter(1, 29));
 			else
 				wv_day.setAdapter(new NumericWheelAdapter(1, 28));
 		}
-		wv_day.setLabel("ÈÕ");
+		wv_day.setLabel("æ—¥");
 		wv_day.setCurrentItem(day - 1);
 
-		// Ê±
+		// æ—¶
 		final WheelView wv_hours = (WheelView) view.findViewById(R.id.hour);
 		wv_hours.setAdapter(new NumericWheelAdapter(0, 23));
 		wv_hours.setCyclic(true);
 		wv_hours.setCurrentItem(hour);
 
-		// ·Ö
+		// åˆ†
 		final WheelView wv_mins = (WheelView) view.findViewById(R.id.mins);
 		wv_mins.setAdapter(new NumericWheelAdapter(0, 59, "%02d"));
 		wv_mins.setCyclic(true);
 		wv_mins.setCurrentItem(minute);
 
-		// Ìí¼Ó"Äê"¼àÌı
+		// æ·»åŠ "å¹´"ç›‘å¬
 		OnWheelChangedListener wheelListener_year = new OnWheelChangedListener() {
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				int year_num = newValue + START_YEAR;
-				// ÅĞ¶Ï´óĞ¡ÔÂ¼°ÊÇ·ñÈòÄê,ÓÃÀ´È·¶¨"ÈÕ"µÄÊı¾İ
+				// åˆ¤æ–­å¤§å°æœˆåŠæ˜¯å¦é—°å¹´,ç”¨æ¥ç¡®å®š"æ—¥"çš„æ•°æ®
 				if (list_big.contains(String
 						.valueOf(wv_month.getCurrentItem() + 1))) {
 					wv_day.setAdapter(new NumericWheelAdapter(1, 31));
@@ -228,11 +228,11 @@ Runnable r = new Runnable() {
 				}
 			}
 		};
-		// Ìí¼Ó"ÔÂ"¼àÌı
+		// æ·»åŠ "æœˆ"ç›‘å¬
 		OnWheelChangedListener wheelListener_month = new OnWheelChangedListener() {
 			public void onChanged(WheelView wheel, int oldValue, int newValue) {
 				int month_num = newValue + 1;
-				// ÅĞ¶Ï´óĞ¡ÔÂ¼°ÊÇ·ñÈòÄê,ÓÃÀ´È·¶¨"ÈÕ"µÄÊı¾İ
+				// åˆ¤æ–­å¤§å°æœˆåŠæ˜¯å¦é—°å¹´,ç”¨æ¥ç¡®å®š"æ—¥"çš„æ•°æ®
 				if (list_big.contains(String.valueOf(month_num))) {
 					wv_day.setAdapter(new NumericWheelAdapter(1, 31));
 				} else if (list_little.contains(String.valueOf(month_num))) {
@@ -250,7 +250,7 @@ Runnable r = new Runnable() {
 		wv_year.addChangingListener(wheelListener_year);
 		wv_month.addChangingListener(wheelListener_month);
 
-		// ¸ù¾İÆÁÄ»ÃÜ¶ÈÀ´Ö¸¶¨Ñ¡ÔñÆ÷×ÖÌåµÄ´óĞ¡
+		// æ ¹æ®å±å¹•å¯†åº¦æ¥æŒ‡å®šé€‰æ‹©å™¨å­—ä½“çš„å¤§å°
 		int textSize = 0;
 
 		textSize = 12;
@@ -264,16 +264,16 @@ Runnable r = new Runnable() {
 		Button btn_sure = (Button) view.findViewById(R.id.btn_datetime_sure);
 		Button btn_cancel = (Button) view
 				.findViewById(R.id.btn_datetime_cancel);
-		// È·¶¨
+		// ç¡®å®š
 		btn_sure.setOnClickListener(new OnClickListener() {
 
 		
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
-				// Èç¹ûÊÇ¸öÊı,ÔòÏÔÊ¾Îª"02"µÄÑùÊ½
+				// å¦‚æœæ˜¯ä¸ªæ•°,åˆ™æ˜¾ç¤ºä¸º"02"çš„æ ·å¼
 				String parten = "00";
 				DecimalFormat decimal = new DecimalFormat(parten);
-				// ÉèÖÃÈÕÆÚµÄÏÔÊ¾
+				// è®¾ç½®æ—¥æœŸçš„æ˜¾ç¤º
 				 et.setText((wv_year.getCurrentItem() + START_YEAR) + "-"
 				 + decimal.format((wv_month.getCurrentItem() + 1)) + "-"
 				 + decimal.format((wv_day.getCurrentItem() + 1)) + " "
@@ -283,7 +283,7 @@ Runnable r = new Runnable() {
 				dialog.dismiss();
 			}
 		});
-		// È¡Ïû
+		// å–æ¶ˆ
 		btn_cancel.setOnClickListener(new OnClickListener() {
 
 		
@@ -292,7 +292,7 @@ Runnable r = new Runnable() {
 				dialog.dismiss();
 			}
 		});
-		// ÉèÖÃdialogµÄ²¼¾Ö,²¢ÏÔÊ¾
+		// è®¾ç½®dialogçš„å¸ƒå±€,å¹¶æ˜¾ç¤º
 		dialog.setContentView(view);
 		dialog.show();
 	}

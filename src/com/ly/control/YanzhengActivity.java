@@ -55,7 +55,7 @@ public class YanzhengActivity extends Activity {
 				finish();
 			}
 			else{
-				Toast.makeText(YanzhengActivity.this, "ÑéÖ¤ÂëÊäÈë´íÎóÇëÖØĞÂÊäÈë£¡", Toast.LENGTH_LONG).show();
+				Toast.makeText(YanzhengActivity.this, "éªŒè¯ç è¾“å…¥é”™è¯¯è¯·é‡æ–°è¾“å…¥ï¼", Toast.LENGTH_LONG).show();
 			}
 		}
 	};

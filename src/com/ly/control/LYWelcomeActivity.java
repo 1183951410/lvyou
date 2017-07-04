@@ -17,7 +17,7 @@ import android.os.Bundle;
  * Title: LogoActivity
  * </p>
  * <p>
- * Description: Ó¦ÓÃ³ÌĞòÆô¶¯Ê±ÏÔÊ¾µÄLOGO½çÃæ
+ * Description: åº”ç”¨ç¨‹åºå¯åŠ¨æ—¶æ˜¾ç¤ºçš„LOGOç•Œé¢
  * </p>
  * <p>
  * Copyright: Copyright (c) 2011
@@ -32,35 +32,35 @@ import android.os.Bundle;
 
 public class LYWelcomeActivity extends Activity {
 	/**
-	 * ÓÃÓÚÏÔÊ¾LogoµÄ×Ô¶¨ÒåÊÓÍ¼
+	 * ç”¨äºæ˜¾ç¤ºLogoçš„è‡ªå®šä¹‰è§†å›¾
 	 * */
 	LogoView lv;
 
 	@Override
 	/**
-	 * ´´½¨ActivityÊ±×Ô¶¯»Øµ÷
+	 * åˆ›å»ºActivityæ—¶è‡ªåŠ¨å›è°ƒ
 	 * */
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		//System.out.println("Logo onCreate");
 		super.onCreate(savedInstanceState);
 
-		// ÊµÀı»¯×Ô¶¨ÒåÊÓÍ¼
+		// å®ä¾‹åŒ–è‡ªå®šä¹‰è§†å›¾
 		lv = new LogoView(this);
-		// ½«×Ô¶¨ÒåÊÓÍ¼ÏÔÊ¾ÔÚ±¾½çÃæ
+		// å°†è‡ªå®šä¹‰è§†å›¾æ˜¾ç¤ºåœ¨æœ¬ç•Œé¢
 		setContentView(lv);
-		// ´´½¨ĞŞ¸ÄLogoÍ¸Ã÷¶ÈµÄÒì²½ÈÎÎñ
+		// åˆ›å»ºä¿®æ”¹Logoé€æ˜åº¦çš„å¼‚æ­¥ä»»åŠ¡
 		LogoTask task = new LogoTask();
-		// Ö´ĞĞÒì²½ÈÎÎñ
+		// æ‰§è¡Œå¼‚æ­¥ä»»åŠ¡
 		task.execute();
 	}
 
 	/**
-	 * ÓÃÓÚĞŞ¸ÄLogo½çÃæÍ¼Æ¬Í¸Ã÷¶ÈµÄÒì²½ÈÎÎñ
+	 * ç”¨äºä¿®æ”¹Logoç•Œé¢å›¾ç‰‡é€æ˜åº¦çš„å¼‚æ­¥ä»»åŠ¡
 	 * */
 	private class LogoTask extends AsyncTask<Object, Integer, String> {
 
-		// µ±Ç°µÄÍ¸Ã÷¶ÈÈ¡Öµ
+		// å½“å‰çš„é€æ˜åº¦å–å€¼
 		int alpha = 0;
 
 		@Override
@@ -70,7 +70,7 @@ public class LYWelcomeActivity extends Activity {
 			//System.out.println("a"+System.currentTimeMillis());
 		}
 		/**
-		 * Òì²½ÈÎÎñÖ´ĞĞ³É¹¦ºó£¬×Ô¶¯Ìø×ªÖÁÓ¦ÓÃ³ÌĞòÖ÷½çÃæ
+		 * å¼‚æ­¥ä»»åŠ¡æ‰§è¡ŒæˆåŠŸåï¼Œè‡ªåŠ¨è·³è½¬è‡³åº”ç”¨ç¨‹åºä¸»ç•Œé¢
 		 * */
 		@Override
 		protected void onPostExecute(String result) {
@@ -80,7 +80,7 @@ public class LYWelcomeActivity extends Activity {
 			startActivity(intent);
 		}
 		/**
-		 * ĞŞ¸ÄLogo×Ô¶¨ÒåÊÓÍ¼Í¼Æ¬Í¸Ã÷¶È£¬²¢ÖØ»æ
+		 * ä¿®æ”¹Logoè‡ªå®šä¹‰è§†å›¾å›¾ç‰‡é€æ˜åº¦ï¼Œå¹¶é‡ç»˜
 		 * */
 		@Override
 		protected void onProgressUpdate(Integer... values) {
@@ -91,7 +91,7 @@ public class LYWelcomeActivity extends Activity {
 		}
 
 		/**
-		 * Òì²½ÈÎÎñ£¬Ñ­»·¸Ä±äÍ¸Ã÷¶ÈÈ¡Öµ
+		 * å¼‚æ­¥ä»»åŠ¡ï¼Œå¾ªç¯æ”¹å˜é€æ˜åº¦å–å€¼
 		 * */
 		@Override
 		protected String doInBackground(Object... arg0) {

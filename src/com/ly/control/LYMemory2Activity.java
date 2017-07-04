@@ -36,9 +36,9 @@ import com.ly.common.GLOBAL;
 public class LYMemory2Activity extends Activity {
 	private RatingBar ratbar;
 
-	private  String ITEM1="½«×÷ÕßÌí¼ÓÎªºÃÓÑ";
-	private  String ITEM2="½«×÷ÕßÌí¼ÓÎª¹Ø×¢Õß";
-	private  String ITEM3="²é¿´×÷ÕßÏêÇé";
+	private  String ITEM1="å°†ä½œè€…æ·»åŠ ä¸ºå¥½å‹";
+	private  String ITEM2="å°†ä½œè€…æ·»åŠ ä¸ºå…³æ³¨è€…";
+	private  String ITEM3="æŸ¥çœ‹ä½œè€…è¯¦æƒ…";
 
 
 	private final int ORDER1= Menu.FIRST;
@@ -125,7 +125,7 @@ public class LYMemory2Activity extends Activity {
 			if(v==bt2){
 				if(otherid.equals(hostid)||hostid==null)					
 				{
-				Toast.makeText(LYMemory2Activity.this, "Ìí¼ÓÊ§°Ü£¬Î´µÇÂ¼»òÕßID³åÍ»Çë¼ì²é", Toast.LENGTH_LONG).show();
+				Toast.makeText(LYMemory2Activity.this, "æ·»åŠ å¤±è´¥ï¼Œæœªç™»å½•æˆ–è€…IDå†²çªè¯·æ£€æŸ¥", Toast.LENGTH_LONG).show();
 				}
 				else
 				{
@@ -139,7 +139,7 @@ public class LYMemory2Activity extends Activity {
 				
 				if(otherid.equals(hostid)||hostid==null)					
 				{
-				Toast.makeText(LYMemory2Activity.this, "Ìí¼ÓÊ§°Ü£¬Î´µÇÂ¼»òÕßID³åÍ»Çë¼ì²é", Toast.LENGTH_LONG).show();
+				Toast.makeText(LYMemory2Activity.this, "æ·»åŠ å¤±è´¥ï¼Œæœªç™»å½•æˆ–è€…IDå†²çªè¯·æ£€æŸ¥", Toast.LENGTH_LONG).show();
 				}
 				else
 				{
@@ -153,14 +153,14 @@ public class LYMemory2Activity extends Activity {
 			{	
 				if(hostid==null)					
 				{
-				Toast.makeText(LYMemory2Activity.this, "Î´µÇÂ¼£¬ÇëµÇÂ¼ºóÔÙ»Ø¸´", Toast.LENGTH_LONG).show();
+				Toast.makeText(LYMemory2Activity.this, "æœªç™»å½•ï¼Œè¯·ç™»å½•åå†å›å¤", Toast.LENGTH_LONG).show();
 				}
 				else
 				{
 				pd.show();
 				Thread t = new Thread(r2);
 				t.start();
-				Toast.makeText(LYMemory2Activity.this, "»Ø¸´³É¹¦", Toast.LENGTH_LONG).show();
+				Toast.makeText(LYMemory2Activity.this, "å›å¤æˆåŠŸ", Toast.LENGTH_LONG).show();
 				}
 			}
 		}
@@ -229,9 +229,9 @@ public class LYMemory2Activity extends Activity {
 			  public void handleMessage(android.os.Message msg) {
 				String result=(String) msg.obj;
 				if(result.equals("error")){
-					Toast.makeText(LYMemory2Activity.this, "Ìí¼ÓÊ§°Ü£¬Î´µÇÂ¼»òÕßID³åÍ»Çë¼ì²é", Toast.LENGTH_LONG).show();
+					Toast.makeText(LYMemory2Activity.this, "æ·»åŠ å¤±è´¥ï¼Œæœªç™»å½•æˆ–è€…IDå†²çªè¯·æ£€æŸ¥", Toast.LENGTH_LONG).show();
 				}else{
-					Toast.makeText(LYMemory2Activity.this, "Ìí¼Ó³É¹¦", Toast.LENGTH_LONG).show();
+					Toast.makeText(LYMemory2Activity.this, "æ·»åŠ æˆåŠŸ", Toast.LENGTH_LONG).show();
 					
 				}
 			  };
@@ -331,7 +331,7 @@ public class LYMemory2Activity extends Activity {
 							System.out.println(mmid);
 							TextView tv1 = (TextView) v.findViewById(R.id.uname22);
 							String name =list.get(position)[3];
-							tv1.setText("¡¾"+name+"¡¿");
+							tv1.setText("ã€"+name+"ã€‘");
 							TextView tv2 = (TextView)v.findViewById(R.id.content22);
 							String content=list.get(position)[0];
 							tv2.setText(content);
@@ -393,9 +393,9 @@ public class LYMemory2Activity extends Activity {
 					  public void handleMessage(android.os.Message msg) {
 						String result=(String) msg.obj;
 						if(result.equals("error")){
-							Toast.makeText(LYMemory2Activity.this, "Ìí¼ÓÊ§°Ü£¬Î´µÇÂ¼»òÕßID³åÍ»Çë¼ì²é", Toast.LENGTH_LONG).show();
+							Toast.makeText(LYMemory2Activity.this, "æ·»åŠ å¤±è´¥ï¼Œæœªç™»å½•æˆ–è€…IDå†²çªè¯·æ£€æŸ¥", Toast.LENGTH_LONG).show();
 						}else{
-							Toast.makeText(LYMemory2Activity.this, "ÑéÖ¤ĞÅÏ¢ÒÑ¾­·¢ËÍ", Toast.LENGTH_LONG).show();
+							Toast.makeText(LYMemory2Activity.this, "éªŒè¯ä¿¡æ¯å·²ç»å‘é€", Toast.LENGTH_LONG).show();
 						}
 					  };
 				  };
