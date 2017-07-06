@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -120,7 +121,6 @@ public class LYMemoryActivity extends Activity {
 				sb.append("</user>");
 				byte userXml[] = sb.toString().getBytes();
 				Log.d("ly", "1userXml" + Arrays.toString(userXml));
-				Log.d("ly", "1userXml string" + (sb.toString()));
 				out.write(userXml);
 				if (htc.getResponseCode() == HttpURLConnection.HTTP_OK) {
 					InputStream in = htc.getInputStream();
@@ -128,7 +128,6 @@ public class LYMemoryActivity extends Activity {
 					list = smb.gettogether(in);
 					Message msg = new Message();
 					msg.obj = list;
-					Log.d("ly", "msg.obj:" + list);
 					h.sendMessage(msg);
 
 				}
@@ -158,6 +157,7 @@ public class LYMemoryActivity extends Activity {
 					ti = list.get(arg2)[8];
 					te = list.get(arg2)[9];
 					tt = list.get(arg2)[10];
+					Log.d("ly", "hostid " + hostid);
 					if (hostid == null) {
 						Toast.makeText(LYMemoryActivity.this, "请先登录,再查看详情",
 								Toast.LENGTH_LONG).show();
@@ -181,6 +181,17 @@ public class LYMemoryActivity extends Activity {
 
 		};
 	};
+	
+	public void onBackPressed() {
+		Log.d("ly", "onBackPressed");
+		super.onBackPressed();
+	}
+	
+
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		Log.d("ly", "LYMemoryAty dispatchKeyEvent " + event.getKeyCode());
+		return super.dispatchKeyEvent(event);
+	}
 
 	private class myadapter extends BaseAdapter {
 		private Context c;

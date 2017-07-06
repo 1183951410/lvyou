@@ -7,17 +7,19 @@ package com.amo.demo.wheelview;
 
 
 
-import com.ly.control.R;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
-
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+
+import com.ly.control.R;
 
 /**
  * <p>
@@ -71,9 +73,9 @@ public class LogoView extends View {
 	 * */
 	public void repaint(int alpha) {
 		this.alpha = alpha;
-		//Log.d("ly", "111111111111");
 		// 抛出重绘事件
 		invalidate();
+//		Log.d("ly", "invalidate");
 		
 	}
 
@@ -84,14 +86,14 @@ public class LogoView extends View {
 		super(context);
 		// 加载应用软件LOGO图片
 		logo = BitmapFactory.decodeResource(context.getResources(),
-				R.drawable.welcome2);
+				R.drawable.welcome);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	protected void onDraw(Canvas canvas) {
 		// TODO Auto-generated method stub
-        //Log.d("ly", "22222222");
+//		Log.d("ly", "onDraw");
 		// 清屏
 		canvas.drawColor(Color.WHITE);
 		// 创建画笔对象
@@ -99,7 +101,16 @@ public class LogoView extends View {
 		// 设置画笔对象的透明度为当前透明度取值
 		p.setAlpha(alpha);
 		// 在视图上利用画笔绘制Logo图像
-		canvas.drawBitmap(logo, 0.0f, 0.0f, p);
+		Rect src = new Rect(0, 0, logo.getWidth(), logo.getHeight());
+		
+		WindowManager wm = (WindowManager) getContext()
+                .getSystemService(Context.WINDOW_SERVICE);
+		 
+		int width = wm.getDefaultDisplay().getWidth();
+		int height = wm.getDefaultDisplay().getHeight();
+		Rect dst = new Rect(0, 0, width, height);
+		canvas.drawBitmap(logo, src, dst, p);
+		
 	}
 
 }

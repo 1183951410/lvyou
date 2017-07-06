@@ -4,13 +4,13 @@
 
 package com.ly.control;
 
-import com.amo.demo.wheelview.LogoView;
-
 import android.app.Activity;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+
+import com.amo.demo.wheelview.LogoView;
 
 /**
  * <p>
@@ -42,7 +42,7 @@ public class LYWelcomeActivity extends Activity {
 	 * */
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		//Log.d("ly", "Logo onCreate");
+		Log.d("ly", "Logo onCreate");
 		super.onCreate(savedInstanceState);
 
 		// 实例化自定义视图
@@ -67,24 +67,29 @@ public class LYWelcomeActivity extends Activity {
 		protected void onPreExecute() {
 			// TODO Auto-generated method stub
 			super.onPreExecute();
-			//Log.d("ly", "a"+System.currentTimeMillis());
+			// Log.d("ly", "a"+System.currentTimeMillis());
 		}
+
 		/**
 		 * 异步任务执行成功后，自动跳转至应用程序主界面
 		 * */
 		@Override
 		protected void onPostExecute(String result) {
-			 //Log.d("ly", "d"+System.currentTimeMillis());
+			 Log.d("ly", "startActivity");
 			// TODO Auto-generated method stub
-			Intent intent=new Intent(LYWelcomeActivity .this, LYTabHostActivity.class);
+			Intent intent = new Intent(LYWelcomeActivity.this,
+					LYTabHostActivity.class);
+//			intent.putExtra("result", "1");
 			startActivity(intent);
+			finish();
 		}
+
 		/**
 		 * 修改Logo自定义视图图片透明度，并重绘
 		 * */
 		@Override
 		protected void onProgressUpdate(Integer... values) {
-			 //Log.d("ly", "c"+System.currentTimeMillis());
+			// Log.d("ly", "c"+System.currentTimeMillis());
 			// TODO Auto-generated method stub
 			int temp = values[0].intValue();
 			lv.repaint(temp);
@@ -96,7 +101,7 @@ public class LYWelcomeActivity extends Activity {
 		@Override
 		protected String doInBackground(Object... arg0) {
 			// TODO Auto-generated method stub
-          // Log.d("ly", "b"+System.currentTimeMillis());
+			// Log.d("ly", "b"+System.currentTimeMillis());
 			while (alpha < 255) {
 
 				try {

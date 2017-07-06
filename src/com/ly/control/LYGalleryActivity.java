@@ -87,7 +87,8 @@ public class LYGalleryActivity extends Activity {
 			ImageView img = new ImageView(ctx);
 			Bitmap bm = BitmapFactory.decodeFile("/sdcard/"+image[position]);
 			img.setImageBitmap(bm);
-			img.setLayoutParams(new Gallery.LayoutParams(80,108));//图片宽和高
+			Gallery.LayoutParams params = new Gallery.LayoutParams(200,200);
+			img.setLayoutParams(params);//图片宽和高
 			img.setScaleType(ImageView.ScaleType.FIT_XY);//图片如何在imageview中显示
 			img.setBackgroundResource(background);
 			return img;

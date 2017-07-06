@@ -98,8 +98,7 @@ public class LYMemory2Activity extends Activity {
 
 		hostid = getIntent().getStringExtra("hostid");
 		otherid = getIntent().getStringExtra("uid");
-
-		// Log.d("ly", hostid+"::::"+otherid);
+		Log.d("ly", "hostid:" + hostid + " otherid:" + otherid);
 
 		Thread t = new Thread(r2);
 		t.start();
@@ -198,6 +197,7 @@ public class LYMemory2Activity extends Activity {
 				byte userXML[] = sb.toString().getBytes();
 				out.write(userXML);
 
+				Log.d("ly", "hostid:" + hostid + " otherid:" + otherid);
 				if (htc.getResponseCode() == HttpURLConnection.HTTP_OK) {
 					InputStream in = htc.getInputStream();
 					LYAddAttentionBean fab = new LYAddAttentionBean();

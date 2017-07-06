@@ -152,8 +152,8 @@ public class LYLoginActivity extends Activity {
 	private String result;
 	Handler h = new Handler() {
 		public void handleMessage(Message msg) {
-			Log.d("ly", "++++++++++++login:2");
 			String re = msg.obj + "";
+			Log.d("ly", "++++++++++++login:2 " + re);
 			if (re.equals("error")) {
 				Toast.makeText(LYLoginActivity.this, "登录失败,请检查用户名密码是否正确",
 						Toast.LENGTH_LONG).show();
